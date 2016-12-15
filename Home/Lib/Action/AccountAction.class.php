@@ -75,6 +75,8 @@
 			$id = $_GET['id'];
 			$p  = $_GET['p']; //先走总人数
 			$v  = $_GET['v']; //先走会员人数
+			$y2s = $_GET['y2s'];
+			$y4s = $_GET['y4s'];
 
 			$m   = D('Account');
 			$arr = $m->where('id='.$id)->find();
@@ -83,8 +85,8 @@
 			$carr['stime']   = $arr['stime'];
 			$carr['pnumber'] = $p;
 			$carr['vnumber'] = $v;
-			$carr['y2s']     = 0;
-			$carr['y4s']     = 0;
+			$carr['y2s']     = $y2s;
+			$carr['y4s']     = $y4s;
 			if($arr['tnumber'] == "888") {
 				$total = "包房部分人提前走不用结账";
 			}else{
@@ -214,6 +216,8 @@
 			$xzvn    = $_POST['advanceSettleAccountVnumber'];
 			$aetime  = $_POST['advanceSettleAccountEtime'];
 			$payment = $_POST['advanceSettleAccountPayment'];
+			$y2s     = $_POST['advanceSettleAccount2y'];
+			$y4s     = $_POST['advanceSettleAccount4y'];
 
 			$m = D('Account');
 			$arr = $m->where('id='.$id)->find();
@@ -227,12 +231,16 @@
 			$data['pnumber'] = $xzrs;
 			$data['vnumber'] = $xzvn;
 			$data['tnumber'] = $arr['tnumber'];
+			$data['y2s'] = $y2s;
+			$data['y4s'] = $y4s;
 			$data['total']   = $ays;
 			$data['actual']  = $ass;
 			$data['payment'] = $payment;
 
 			$dataa['pnumber'] = $arr['pnumber'] - (int)$xzrs;
 			$dataa['vnumber'] = $arr['vnumber'] - (int)$xzvn;
+			$dataa['y2s'] = $arr['y2s'] - (int)$y2s;
+			$dataa['y4s'] = $arr['y4s'] - (int)$y4s;
 
 			$c1 = $m->add($data);
 			$c2 = $m->where('id='.$id)->save($dataa);

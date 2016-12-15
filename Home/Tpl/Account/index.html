@@ -284,6 +284,22 @@
 						<input type="number" class="form-control" id="advanceSettleAccountVnumber" name="advanceSettleAccountVnumber" value="0" onkeyup="getASA()" disabled="disabled">
 						<span class="input-group-addon">人</span>
 					</div>
+					<div class="input-group form-group">
+						<span class="input-group-addon">矿&nbsp;泉&nbsp;水</span>
+						<span class="input-group-btn"><button type="button" class="btn btn-warning" onclick="plusay2s()"><span class="glyphicon glyphicon-plus"></span></button></span>
+						<input type="number" class="form-control" id="advanceSettleAccount2y" value="0" disabled>
+						<input type="hidden" name="advanceSettleAccount2y" value="0">
+						<span class="input-group-btn"><button type="button" class="btn btn-warning" onclick="subay2s()"><span class="glyphicon glyphicon-minus"></span></button></span>
+						<span class="input-group-addon">支</span>
+					</div>
+					<div class="input-group form-group">
+						<span class="input-group-addon">4元饮料</span>
+						<span class="input-group-btn"><button type="button" class="btn btn-warning" onclick="plusay4s()"><span class="glyphicon glyphicon-plus"></span></button></span>
+						<input type="number" class="form-control" id="advanceSettleAccount4y" value="0" disabled>
+						<input type="hidden" name="advanceSettleAccount4y" value="0">
+						<span class="input-group-btn"><button type="button" class="btn btn-warning" onclick="subay4s()"><span class="glyphicon glyphicon-minus"></span></button></span>
+						<span class="input-group-addon">支</span>
+					</div>
 					<div class="form-group input-group">
 						<span class="input-group-addon">应收</span>
 						<input type="text" class="form-control" id="advanceSettleAccountTotal" disabled="disabled">
@@ -354,12 +370,16 @@
 		document.getElementById("advanceSettleAccountVnumber").value    = "0";
 		document.getElementById("advanceSettleAccountVnumber").disabled = "disabled";
 		document.getElementById("advanceSettleAccountTime").innerHTML   = "";
+		document.getElementById("advanceSettleAccount4y").value         = 0;
+		document.getElementById("advanceSettleAccount2y").value         = 0;
 	}
 	/*********************************************************************************/
 	/**************************ajax获取提前结账金额和时间*****************************/
 	function getASA() {
 		var p = document.getElementById("advanceSettleAccountPnumber").value;
 		var v = document.getElementById("advanceSettleAccountVnumber").value;
+		var y2s = document.getElementById("advanceSettleAccount2y").value;
+		var y4s = document.getElementById("advanceSettleAccount4y").value;
 		var maxp;
 		if(p == "" || p == 0) {
 			document.getElementById("advanceSettleAccountVnumber").disabled = "disabled";
@@ -373,6 +393,8 @@
 			"id": id,
 			"p": p,
 			"v": v,
+			"y2s": y2s,
+			"y4s": y4s,
 		}, function(jdata) {
 			maxp = jdata['pnumber'];
 			maxv = jdata['vnumber'];
@@ -527,6 +549,55 @@
 		}, function(jdata) {
 			// alert(jdata);
 		});
+	}
+	/*********************************************************************************/
+	/*****************************提前结账饮料结算************************************/
+	function plusay4s() {
+		var id = document.getElementById("advanceSettleAccountId").value;
+		var ay4 = document.getElementById("advanceSettleAccount4y").value;
+		var y4 = document.getElementById("4y"+id).value;
+		y4 = parseInt(y4);
+		ay4 = parseInt(ay4);
+		temp = ay4 + 1;
+		if(temp <= y4) {
+			ay4 += 1;
+			document.getElementById("advanceSettleAccount4y").value = ay4;
+			document.getElementsByName("advanceSettleAccount4y")[0].value = ay4;
+		}
+		
+		getASA();
+	}
+	function subay4s() {
+		var ay4 = document.getElementById("advanceSettleAccount4y").value;
+		ay4 = parseInt(ay4);
+		ay4 -= 1;
+		if(ay4 < 0) ay4 = 0;
+		document.getElementById("advanceSettleAccount4y").value = ay4;
+		document.getElementsByName("advanceSettleAccount4y")[0].value = ay4;
+		getASA();
+	}
+	function plusay2s() {
+		var id = document.getElementById("advanceSettleAccountId").value;
+		var ay2 = document.getElementById("advanceSettleAccount2y").value;
+		var y2 = document.getElementById("2y"+id).value;
+		y2 = parseInt(y2);
+		ay2 = parseInt(ay2);
+		temp = ay2 + 1;
+		if(temp <= y2) {
+			ay2 += 1;
+			document.getElementById("advanceSettleAccount2y").value = ay2;
+			document.getElementsByName("advanceSettleAccount2y")[0].value = ay2;
+		}
+		getASA();
+	}
+	function subay2s() {
+		var ay2 = document.getElementById("advanceSettleAccount2y").value;
+		ay2 = parseInt(ay2);
+		ay2 -= 1;
+		if(ay2 < 0) ay2 = 0;
+		document.getElementById("advanceSettleAccount2y").value = ay2;
+		document.getElementsByName("advanceSettleAccount2y")[0].value = ay2;
+		getASA();
 	}
 	/*********************************************************************************/
 </script>
