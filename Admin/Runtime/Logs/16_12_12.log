@@ -1,0 +1,263 @@
+[ 2016-12-12T14:41:45+08:00 ] ERR: (ThinkException) 非法操作:index
+[ 2016-12-12T14:41:48+08:00 ] ERR: (ThinkException) 非法操作:index
+[ 2016-12-12T14:41:54+08:00 ] ERR: (ThinkException) 非法操作:index
+[ 2016-12-12T14:42:21+08:00 ] ERR: (ThinkException) 非法操作:index
+[ 2016-12-12T14:43:05+08:00 ] ERR: (ThinkException) 非法操作:index
+[ 2016-12-12T14:43:48+08:00 ] ERR: (ThinkException) 非法操作:index
+[ 2016-12-12T14:44:44+08:00 ] ERR: (ThinkException) 非法操作:index
+[ 2016-12-12T14:45:35+08:00 ] ERR: (ThinkException) 非法操作:index
+[ 2016-12-12T15:13:36+08:00 ] 0.0.0.0 /lucky/Admin.php/Login/checkName?username=s
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead F:\wamp\wamp\www\lucky\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 55 行.
+SQL: SHOW COLUMNS FROM `tp_user` [ RunTime:0.000000s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead F:\wamp\wamp\www\lucky\ThinkPHP\Lib\Core\Db.class.php 第 568 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `tp_user` WHERE ( `username` = 's' ) LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2016-12-12T15:13:36+08:00 ] 0.0.0.0 /lucky/Admin.php/Login/checkName?username=sh
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead F:\wamp\wamp\www\lucky\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 55 行.
+SQL: SHOW COLUMNS FROM `tp_user` [ RunTime:0.002000s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead F:\wamp\wamp\www\lucky\ThinkPHP\Lib\Core\Db.class.php 第 568 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `tp_user` WHERE ( `username` = 'sh' ) LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2016-12-12T15:13:36+08:00 ] 0.0.0.0 /lucky/Admin.php/Login/checkName?username=shr
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead F:\wamp\wamp\www\lucky\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 55 行.
+SQL: SHOW COLUMNS FROM `tp_user` [ RunTime:0.000000s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead F:\wamp\wamp\www\lucky\ThinkPHP\Lib\Core\Db.class.php 第 568 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `tp_user` WHERE ( `username` = 'shr' ) LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2016-12-12T15:13:36+08:00 ] 0.0.0.0 /lucky/Admin.php/Login/checkName?username=shri
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead F:\wamp\wamp\www\lucky\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 55 行.
+SQL: SHOW COLUMNS FROM `tp_user` [ RunTime:0.001000s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead F:\wamp\wamp\www\lucky\ThinkPHP\Lib\Core\Db.class.php 第 568 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `tp_user` WHERE ( `username` = 'shri' ) LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2016-12-12T15:13:37+08:00 ] 0.0.0.0 /lucky/Admin.php/Login/checkName?username=shrikl
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead F:\wamp\wamp\www\lucky\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 55 行.
+SQL: SHOW COLUMNS FROM `tp_user` [ RunTime:0.001000s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead F:\wamp\wamp\www\lucky\ThinkPHP\Lib\Core\Db.class.php 第 568 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `tp_user` WHERE ( `username` = 'shrikl' ) LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2016-12-12T15:13:37+08:00 ] 0.0.0.0 /lucky/Admin.php/Login/checkName?username=shrikl
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead F:\wamp\wamp\www\lucky\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 55 行.
+SQL: SHOW COLUMNS FROM `tp_user` [ RunTime:0.000000s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead F:\wamp\wamp\www\lucky\ThinkPHP\Lib\Core\Db.class.php 第 568 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `tp_user` WHERE ( `username` = 'shrikl' ) LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2016-12-12T15:13:38+08:00 ] 0.0.0.0 /lucky/Admin.php/Login/checkName?username=shrik
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead F:\wamp\wamp\www\lucky\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 55 行.
+SQL: SHOW COLUMNS FROM `tp_user` [ RunTime:0.002000s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead F:\wamp\wamp\www\lucky\ThinkPHP\Lib\Core\Db.class.php 第 568 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `tp_user` WHERE ( `username` = 'shrik' ) LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2016-12-12T15:13:38+08:00 ] 0.0.0.0 /lucky/Admin.php/Login/checkName?username=shri
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead F:\wamp\wamp\www\lucky\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 55 行.
+SQL: SHOW COLUMNS FROM `tp_user` [ RunTime:0.000000s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead F:\wamp\wamp\www\lucky\ThinkPHP\Lib\Core\Db.class.php 第 568 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `tp_user` WHERE ( `username` = 'shri' ) LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2016-12-12T15:13:38+08:00 ] 0.0.0.0 /lucky/Admin.php/Login/checkName?username=shr
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead F:\wamp\wamp\www\lucky\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 55 行.
+SQL: SHOW COLUMNS FROM `tp_user` [ RunTime:0.000000s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead F:\wamp\wamp\www\lucky\ThinkPHP\Lib\Core\Db.class.php 第 568 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `tp_user` WHERE ( `username` = 'shr' ) LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2016-12-12T15:13:38+08:00 ] 0.0.0.0 /lucky/Admin.php/Login/checkName?username=sh
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead F:\wamp\wamp\www\lucky\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 55 行.
+SQL: SHOW COLUMNS FROM `tp_user` [ RunTime:0.000000s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead F:\wamp\wamp\www\lucky\ThinkPHP\Lib\Core\Db.class.php 第 568 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `tp_user` WHERE ( `username` = 'sh' ) LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2016-12-12T15:13:38+08:00 ] 0.0.0.0 /lucky/Admin.php/Login/checkName?username=s
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead F:\wamp\wamp\www\lucky\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 55 行.
+SQL: SHOW COLUMNS FROM `tp_user` [ RunTime:0.001001s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead F:\wamp\wamp\www\lucky\ThinkPHP\Lib\Core\Db.class.php 第 568 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `tp_user` WHERE ( `username` = 's' ) LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2016-12-12T15:13:39+08:00 ] 0.0.0.0 /lucky/Admin.php/Login/checkName?username=
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-12-12T15:13:39+08:00 ] 0.0.0.0 /lucky/Admin.php/Login/checkName?username=
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-12T15:14:17+08:00 ] 0.0.0.0 /lucky/Admin.php/Login/checkName?username=z
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead F:\wamp\wamp\www\lucky\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 55 行.
+SQL: SHOW COLUMNS FROM `tp_user` [ RunTime:0.002000s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead F:\wamp\wamp\www\lucky\ThinkPHP\Lib\Core\Db.class.php 第 568 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `tp_user` WHERE ( `username` = 'z' ) LIMIT 1   [ RunTime:0.001000s ]
+
+[ 2016-12-12T15:14:18+08:00 ] 0.0.0.0 /lucky/Admin.php/Login/checkName?username=zt
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead F:\wamp\wamp\www\lucky\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 55 行.
+SQL: SHOW COLUMNS FROM `tp_user` [ RunTime:0.000000s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead F:\wamp\wamp\www\lucky\ThinkPHP\Lib\Core\Db.class.php 第 568 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `tp_user` WHERE ( `username` = 'zt' ) LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2016-12-12T15:14:18+08:00 ] 0.0.0.0 /lucky/Admin.php/Login/checkName?username=ztz
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead F:\wamp\wamp\www\lucky\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 55 行.
+SQL: SHOW COLUMNS FROM `tp_user` [ RunTime:0.000000s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead F:\wamp\wamp\www\lucky\ThinkPHP\Lib\Core\Db.class.php 第 568 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `tp_user` WHERE ( `username` = 'ztz' ) LIMIT 1   [ RunTime:0.015600s ]
+
+[ 2016-12-12T15:14:18+08:00 ] 0.0.0.0 /lucky/Admin.php/Login/checkName?username=ztz3
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead F:\wamp\wamp\www\lucky\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 55 行.
+SQL: SHOW COLUMNS FROM `tp_user` [ RunTime:0.001000s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead F:\wamp\wamp\www\lucky\ThinkPHP\Lib\Core\Db.class.php 第 568 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `tp_user` WHERE ( `username` = 'ztz3' ) LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2016-12-12T15:14:19+08:00 ] 0.0.0.0 /lucky/Admin.php/Login/checkName?username=ztz
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead F:\wamp\wamp\www\lucky\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 55 行.
+SQL: SHOW COLUMNS FROM `tp_user` [ RunTime:0.001000s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead F:\wamp\wamp\www\lucky\ThinkPHP\Lib\Core\Db.class.php 第 568 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `tp_user` WHERE ( `username` = 'ztz' ) LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2016-12-12T15:14:19+08:00 ] 0.0.0.0 /lucky/Admin.php/Login/checkName?username=zt
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.015600s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015600s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead F:\wamp\wamp\www\lucky\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 55 行.
+SQL: SHOW COLUMNS FROM `tp_user` [ RunTime:0.000000s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead F:\wamp\wamp\www\lucky\ThinkPHP\Lib\Core\Db.class.php 第 568 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `tp_user` WHERE ( `username` = 'zt' ) LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2016-12-12T15:14:20+08:00 ] 0.0.0.0 /lucky/Admin.php/Login/checkName?username=z
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead F:\wamp\wamp\www\lucky\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 55 行.
+SQL: SHOW COLUMNS FROM `tp_user` [ RunTime:0.000000s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead F:\wamp\wamp\www\lucky\ThinkPHP\Lib\Core\Db.class.php 第 568 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `tp_user` WHERE ( `username` = 'z' ) LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2016-12-12T15:14:20+08:00 ] 0.0.0.0 /lucky/Admin.php/Login/checkName?username=
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-12-12T15:15:35+08:00 ] 0.0.0.0 /lucky/Admin.php/Login/checkName?username=d
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead F:\wamp\wamp\www\lucky\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 55 行.
+SQL: SHOW COLUMNS FROM `tp_user` [ RunTime:0.000000s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead F:\wamp\wamp\www\lucky\ThinkPHP\Lib\Core\Db.class.php 第 568 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `tp_user` WHERE ( `username` = 'd' ) LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2016-12-12T15:20:04+08:00 ] 0.0.0.0 /lucky/Admin.php/Login/checkName?username=z
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead F:\wamp\wamp\www\lucky\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 55 行.
+SQL: SHOW COLUMNS FROM `tp_user` [ RunTime:0.002000s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead F:\wamp\wamp\www\lucky\ThinkPHP\Lib\Core\Db.class.php 第 568 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `tp_user` WHERE ( `username` = 'z' ) LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2016-12-12T15:20:04+08:00 ] 0.0.0.0 /lucky/Admin.php/Login/checkName?username=zt
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.015600s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015600s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead F:\wamp\wamp\www\lucky\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 55 行.
+SQL: SHOW COLUMNS FROM `tp_user` [ RunTime:0.000000s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead F:\wamp\wamp\www\lucky\ThinkPHP\Lib\Core\Db.class.php 第 568 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `tp_user` WHERE ( `username` = 'zt' ) LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2016-12-12T15:20:04+08:00 ] 0.0.0.0 /lucky/Admin.php/Login/checkName?username=ztz
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead F:\wamp\wamp\www\lucky\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 55 行.
+SQL: SHOW COLUMNS FROM `tp_user` [ RunTime:0.000000s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead F:\wamp\wamp\www\lucky\ThinkPHP\Lib\Core\Db.class.php 第 568 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `tp_user` WHERE ( `username` = 'ztz' ) LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2016-12-12T15:20:05+08:00 ] 0.0.0.0 /lucky/Admin.php/Login/checkName?username=ztz3
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead F:\wamp\wamp\www\lucky\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 55 行.
+SQL: SHOW COLUMNS FROM `tp_user` [ RunTime:0.003000s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead F:\wamp\wamp\www\lucky\ThinkPHP\Lib\Core\Db.class.php 第 568 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `tp_user` WHERE ( `username` = 'ztz3' ) LIMIT 1   [ RunTime:0.001000s ]
+
+[ 2016-12-12T15:20:07+08:00 ] 0.0.0.0 /lucky/Admin.php/Login/checkName?username=
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-12T15:27:44+08:00 ] 0.0.0.0 /lucky/Admin.php/Login/checkName?username=k
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead F:\wamp\wamp\www\lucky\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 55 行.
+SQL: SHOW COLUMNS FROM `tp_user` [ RunTime:0.000000s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead F:\wamp\wamp\www\lucky\ThinkPHP\Lib\Core\Db.class.php 第 568 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `tp_user` WHERE ( `username` = 'k' ) LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2016-12-12T15:27:44+08:00 ] 0.0.0.0 /lucky/Admin.php/Login/checkName?username=kk
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead F:\wamp\wamp\www\lucky\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 55 行.
+SQL: SHOW COLUMNS FROM `tp_user` [ RunTime:0.000000s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead F:\wamp\wamp\www\lucky\ThinkPHP\Lib\Core\Db.class.php 第 568 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `tp_user` WHERE ( `username` = 'kk' ) LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2016-12-12T15:27:44+08:00 ] 0.0.0.0 /lucky/Admin.php/Login/checkName?username=kkk
+INFO: [ app_begin ] --START--
+INFO: Run ReadHtmlCache Behavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead F:\wamp\wamp\www\lucky\ThinkPHP\Lib\Driver\Db\DbMysql.class.php 第 55 行.
+SQL: SHOW COLUMNS FROM `tp_user` [ RunTime:0.015600s ]
+NOTIC: [8192] preg_replace(): The /e modifier is deprecated, use preg_replace_callback instead F:\wamp\wamp\www\lucky\ThinkPHP\Lib\Core\Db.class.php 第 568 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `tp_user` WHERE ( `username` = 'kkk' ) LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2016-12-12T16:10:36+08:00 ] ERR: (ThinkException) 模板不存在[./Admin/Tpl/Admin/modifyPass.html]

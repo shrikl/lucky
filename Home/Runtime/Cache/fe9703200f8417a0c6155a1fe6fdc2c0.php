@@ -1,0 +1,63 @@
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
+<html>
+<head>
+	<title>乐启账本 -- 登录</title>
+	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+	<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+	<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="row" style="margin-top: 10%;">
+	<div class="col-md-4"></div>
+	<div class="col-md-4">
+		<div class="panel panel-primary">
+			<div class="panel-heading" style="text-align: center;">
+				乐启账本&nbsp;<span class="glyphicon glyphicon-pencil"></span>
+			</div>
+			<div class="panel-body">
+				<form action="__URL__/do_login" method="post" name="doLoginForm" role="form">
+					<div class="input-group form-group">
+						<span class="input-group-addon">&nbsp;&nbsp;&nbsp;&nbsp;用户名&nbsp;&nbsp;&nbsp;</span>
+						<input type="text" name="username" class="form-control" onkeyup="check()">
+					</div>
+					<div class="input-group form-group">
+						<span class="input-group-addon">&nbsp;&nbsp;&nbsp;&nbsp;密&nbsp;&nbsp;&nbsp;码&nbsp;&nbsp;&nbsp;&nbsp;</span>
+						<input type="password" name="password" class="form-control" onkeyup="check()">
+					</div>
+					<div class="input-group form-group">
+						<span class="input-group-addon">&nbsp;&nbsp;&nbsp;&nbsp;验证码&nbsp;&nbsp;&nbsp;&nbsp;</span>
+						<input type="text" name="code" class="form-control" onkeyup="check()">
+						<span class="input-group-addon">
+							<img src="__APP__/Public/code" onclick="this.src=this.src+'?'+Math.random()" name="codeimg">&nbsp;&nbsp;
+							<a href="#" onclick="changeCode()">换一张</a>
+						</span>
+					</div>
+					<button type="submit" class="btn btn-primary btn-block" name="subbtn" disabled="disabled">登录</button>
+					<a href="__APP__/Register/register" role="button" class="btn btn-primary btn-block" disabled="disabled">注册(注册账号请联系管理员)</a>
+					<a href="__ROOT__/Admin.php/Index/index" role="button" class="btn btn-primary btn-block">乐启后台管理系统</a>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-4"></div>
+</div>
+
+<script type="text/javascript">
+	function changeCode() {
+		var codeimg = document.getElementsByName("codeimg")[0];
+		codeimg.src = codeimg.src+'?'+Math.random();
+	}
+	function check() {
+		var ou = document.doLoginForm.username.value;
+		var op = document.doLoginForm.password.value;
+		var oc = document.doLoginForm.code.value;
+		var ob = document.getElementsByName("subbtn")[0];
+		if(ou == "" || op == "" || oc == "") {
+			ob.disabled = "disabled";
+		}else{
+			ob.removeAttribute("disabled");
+		}
+	}
+</script>
+</body>
+</html>
