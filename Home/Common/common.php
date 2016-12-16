@@ -56,6 +56,7 @@
 		$stime = $arr['stime'];
 		$ch1 = date('d', $stime);
 		$ch2 = date('d', $etime);
+		$w = date('w', $stime);
 		if($ch1 == $ch2) {
 			// 当日
 			$time = $etime - $stime;
@@ -77,8 +78,13 @@
 					$ptotal += 13.5;
 					$vtotal += 11.25;
 				}
-				if($ptotal > 68) $ptotal = 68;
-				if($vtotal > 60) $vtotal = 60;
+				if($w == 0 || $w == 6) {
+					if($ptotal > 68) $ptotal = 68;
+					if($vtotal > 55) $vtotal = 55;
+				}else{
+					if($ptotal > 58) $ptotal = 58;
+					if($vtotal > 45) $vtotal = 45;
+				}
 			}else{
 				if($minutes >= 15 && $minutes < 30) {
 					$ptotal += 4.5;
