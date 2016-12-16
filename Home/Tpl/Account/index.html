@@ -234,6 +234,14 @@
 						<input type="text" class="form-control" id="settleAccountTotal" disabled="disabled">
 						<span class="input-group-addon"><span class="glyphicon glyphicon-usd"></span></span>
 					</div>
+					<div class="input-group form-group">
+						<span class="input-group-addon">次卡</span>
+						<span class="input-group-btn"><button type="button" class="btn btn-warning" onclick="plusvipcard()"><span class="glyphicon glyphicon-plus"></span></button></span>
+						<input type="number" class="form-control" id="settleAccountVipcard" value="0" disabled>
+						<input type="hidden" id="settleAccountMaxvipcard" value="">
+						<span class="input-group-btn"><button type="button" class="btn btn-warning" onclick="subvipcard()"><span class="glyphicon glyphicon-minus"></span></button></span>
+						<span class="input-group-addon">张</span>
+					</div>
 					<div class="form-group input-group">
 						<span class="input-group-addon">实收</span>
 
@@ -284,6 +292,14 @@
 						<input type="number" class="form-control" id="advanceSettleAccountVnumber" name="advanceSettleAccountVnumber" value="0" onkeyup="getASA()" disabled="disabled">
 						<span class="input-group-addon">人</span>
 					</div>
+					<!-- <div class="input-group form-group">
+						<span class="input-group-addon">&nbsp;&nbsp;次&nbsp;&nbsp;&nbsp;卡&nbsp;</span>
+						<span class="input-group-btn"><button type="button" class="btn btn-warning" onclick="plusvipcard()"><span class="glyphicon glyphicon-plus"></span></button></span>
+						<input type="number" class="form-control" id="advanceSettleAccountVipcard" value="0" disabled>
+						<input type="hidden" id="advanceSettleAccountMaxvipcard" value="">
+						<span class="input-group-btn"><button type="button" class="btn btn-warning" onclick="subvipcard()"><span class="glyphicon glyphicon-minus"></span></button></span>
+						<span class="input-group-addon">张</span>
+					</div> -->
 					<div class="input-group form-group">
 						<span class="input-group-addon">矿&nbsp;泉&nbsp;水</span>
 						<span class="input-group-btn"><button type="button" class="btn btn-warning" onclick="plusay2s()"><span class="glyphicon glyphicon-plus"></span></button></span>
@@ -349,16 +365,14 @@
 	function initializeSAWindow(id) {
 		document.getElementById("settleAccountActual").value = "";
 		document.getElementById("settleAccountId").value     = id;
-		var y2 = document.getElementById("2y"+id).value;
-		var y4 = document.getElementById("4y"+id).value;
-		$.get('__URL__/getSettleAccount', {
+		document.getElementById("settleAccountVipcard").value = 0;
+		$.get('__URL__/getVnumber', {
 			"id": id,
-			"y2": y2,
-			"y4": y4,
 		}, function(jdata) {
-			document.getElementById("settleAccountTotal").value = jdata['total'];
-			document.getElementById("time").innerHTML           = jdata['sc'];
+			document.getElementById("settleAccountMaxvipcard").value = jdata['vnumber'];
+			// alert(document.getElementById("settleAccountMaxvipcard").value);
 		});
+		getSA(id);
 	}
 	/*********************************************************************************/
 	/*******************************初始化提前结账窗口********************************/
@@ -374,13 +388,29 @@
 		document.getElementById("advanceSettleAccount2y").value         = 0;
 	}
 	/*********************************************************************************/
+	/**************************ajax获取结账金额和时间*****************************/
+	function getSA(id) {
+		var y2 = document.getElementById("2y"+id).value;
+		var y4 = document.getElementById("4y"+id).value;
+		var vipcard = document.getElementById("settleAccountVipcard").value;
+		$.get('__URL__/getSettleAccount', {
+			"id": id,
+			"y2": y2,
+			"y4": y4,
+			"vipcard": vipcard,
+		}, function(jdata) {
+			document.getElementById("settleAccountTotal").value = jdata['total'];
+			document.getElementById("time").innerHTML           = jdata['sc'];
+		});
+	}
+	/*********************************************************************************/
 	/**************************ajax获取提前结账金额和时间*****************************/
 	function getASA() {
 		var p = document.getElementById("advanceSettleAccountPnumber").value;
 		var v = document.getElementById("advanceSettleAccountVnumber").value;
 		var y2s = document.getElementById("advanceSettleAccount2y").value;
 		var y4s = document.getElementById("advanceSettleAccount4y").value;
-		var maxp;
+		var maxp, maxv;
 		if(p == "" || p == 0) {
 			document.getElementById("advanceSettleAccountVnumber").disabled = "disabled";
 			document.getElementById("advanceSettleAccountVnumber").value    = 0;
@@ -598,6 +628,38 @@
 		document.getElementById("advanceSettleAccount2y").value = ay2;
 		document.getElementsByName("advanceSettleAccount2y")[0].value = ay2;
 		getASA();
+	}
+	/*********************************************************************************/
+	/*****************************提前结账次卡结算************************************/
+	function plusvipcard() {
+		var vipcard = document.getElementById("settleAccountVipcard").value;
+		var id = document.getElementById("settleAccountId").value;
+		vipcard = parseInt(vipcard);
+		var temp = vipcard + 1;
+		
+		var maxvipcard = document.getElementById("settleAccountMaxvipcard").value;
+	
+		if(temp > maxvipcard) {
+			vipcard = maxvipcard;
+		}else{
+			vipcard += 1;
+		}
+		document.getElementById("settleAccountVipcard").value = vipcard;
+		getSA(id);
+	}
+	function subvipcard() {
+		var vipcard = document.getElementById("settleAccountVipcard").value;
+		vipcard = parseInt(vipcard);
+		vipcard -= 1;
+		if(vipcard < 0) vipcard = 0;
+		document.getElementById("settleAccountVipcard").value = vipcard;
+		var id = document.getElementById("settleAccountId").value;
+		getSA(id);
+	}
+	function getMaxvipcard(id) {
+		var maxvipcard = 1;
+		
+		return maxvipcard;
 	}
 	/*********************************************************************************/
 </script>

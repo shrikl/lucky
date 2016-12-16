@@ -45,9 +45,12 @@
 		/* ---------------------------------↑↑↑↑↑↑------------------------------------ */
 		public function getSettleAccount() {
 			$id = $_GET['id'];
+			$vipcard = $_GET['vipcard'];
 
 			$m   = D('Account');
 			$arr = $m->where('id='.$id)->find();
+
+			$arr['vipcard'] = $vipcard;
 
 			$etime = time();
 			if($arr['tnumber'] == "888") {
@@ -307,6 +310,12 @@
 			}else{
 				echo 0;
 			}
+		}
+		public function getVnumber() {
+			$id = $_GET['id'];
+			$m = D('Account');
+			$arr = $m->field('vnumber')->where('id='.$id)->find();
+			$this->ajaxReturn($arr);
 		}
 		public function test() {
 			

@@ -97,7 +97,11 @@
 					$vtotal += 11.25;
 				}
 			}
-			$total = $ptotal * ($arr['pnumber'] - $arr['vnumber']) + $vtotal * $arr['vnumber'] + $arr['y2s'] * 2 + $arr['y4s'] * 4;
+			$total = $ptotal * ($arr['pnumber'] - $arr['vnumber'])
+					 + $vtotal * ($arr['vnumber'] - $arr['vipcard'])
+					 + $arr['vipcard'] * 45
+					 + $arr['y2s'] * 2
+					 + $arr['y4s'] * 4;
 			return $total;
 		}else{
 			// 跨日
@@ -106,12 +110,14 @@
 			$arr1['stime'] = $arr['stime'] - 1;
 			$arr1['pnumber'] = $arr['pnumber'];
 			$arr1['vnumber'] = $arr['vnumber'];
+			$arr1['vipcard'] = $arr['vipcard'];
 			$arr1['y2s'] = 0;
 			$arr1['y4s'] = 0;	
 
 			$arr2['stime'] = $mtime2;
 			$arr2['pnumber'] = $arr['pnumber'];
 			$arr2['vnumber'] = $arr['vnumber'];
+			$arr2['vipcard'] = $arr['vipcard'];
 			$arr2['y2s'] = $arr['y2s'];
 			$arr2['y4s'] = $arr['y4s'];	
 
