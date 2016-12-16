@@ -99,7 +99,6 @@
 			}
 			$total = $ptotal * ($arr['pnumber'] - $arr['vnumber'])
 					 + $vtotal * ($arr['vnumber'] - $arr['vipcard'])
-					 + $arr['vipcard'] * 45
 					 + $arr['y2s'] * 2
 					 + $arr['y4s'] * 4;
 			return $total;
