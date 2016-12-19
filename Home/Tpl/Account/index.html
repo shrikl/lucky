@@ -250,7 +250,7 @@
 						<input type="number" class="form-control" id="settleAccountActual" step="0.5" name="settleAccountActual" onkeyup="checkSA()">
 						<span class="input-group-addon"><span class="glyphicon glyphicon-usd"></span></span>
 					</div>
-					<div class="btn-group" data-toggle="buttons" style="width: 100%">
+					<div class="form-group btn-group" data-toggle="buttons" style="width: 100%">
 						<label class="btn btn-primary active" style="width: 33%">
 							<input type="radio" name="settleAccountPayment" value="1" autocomplete="off" checked>现金
 						</label>
@@ -261,7 +261,11 @@
 							<input type="radio" name="settleAccountPayment" value="3" autocomplete="off">支付宝
 						</label>
 					</div>
-					时间: <span id="time"></span>
+					<div class="form-group input-group">
+						<span class="input-group-addon">时间</span>
+						<!-- <span id="time"></span> -->
+						<input type="text" id="time" class="form-control" disabled="">
+					</div>
 				</div>
 				<div class="modal-footer">
 					<button type="submit" class="btn btn-primary" id="SASubBtn" disabled="disabled">袋入袋</button>
@@ -331,7 +335,7 @@
 						<input type="number" class="form-control" id="advanceSettleAccountActual" step="0.5" name="advanceSettleAccountActual" onkeyup="checkASA()">
 						<span class="input-group-addon"><span class="glyphicon glyphicon-usd"></span></span>
 					</div>
-					<div class="btn-group" data-toggle="buttons" style="width: 100%">
+					<div class="form-group btn-group" data-toggle="buttons" style="width: 100%">
 						<label class="btn btn-primary active" style="width: 33%">
 							<input type="radio" name="advanceSettleAccountPayment" value="1" autocomplete="off" checked>现金
 						</label>
@@ -342,7 +346,10 @@
 							<input type="radio" name="advanceSettleAccountPayment" value="3" autocomplete="off">支付宝
 						</label>
 					</div>
-					时间: <span id="advanceSettleAccountTime"></span>
+					<div class="form-group input-group">
+						<span class="input-group-addon">时间</span>
+						<input type="text" id="advanceSettleAccountTime" class="form-control" disabled="">
+					</div>
 				</div>
 				<div class="modal-footer">
 					<button type="submit" class="btn btn-primary" id="ASASubBtn" disabled="disabled">袋入袋</button>
@@ -383,7 +390,7 @@
 		document.getElementById("advanceSettleAccountActual").value     = "";
 		document.getElementById("advanceSettleAccountVnumber").value    = "0";
 		document.getElementById("advanceSettleAccountVnumber").disabled = "disabled";
-		document.getElementById("advanceSettleAccountTime").innerHTML   = "";
+		document.getElementById("advanceSettleAccountTime").value       = "";
 		document.getElementById("advanceSettleAccount4y").value         = 0;
 		document.getElementById("advanceSettleAccount2y").value         = 0;
 		document.getElementById("advanceSettleAccountVipcard").value    = 0;
@@ -401,7 +408,7 @@
 			"vipcard": vipcard,
 		}, function(jdata) {
 			document.getElementById("settleAccountTotal").value = jdata['total'];
-			document.getElementById("time").innerHTML           = jdata['sc'];
+			document.getElementById("time").value               = jdata['sc'];
 		});
 	}
 	/*********************************************************************************/
@@ -452,7 +459,7 @@
 						document.getElementById("advanceSettleAccountTotal").value    = jdata['total'];
 						document.getElementById("advanceSettleAccountYs").value       = jdata['total'];
 						document.getElementById("advanceSettleAccountEtime").value    = jdata['etime'];
-						document.getElementById("advanceSettleAccountTime").innerHTML = jdata['sc'];
+						document.getElementById("advanceSettleAccountTime").value     = jdata['sc'];
 					}
 				}
 			}else{
