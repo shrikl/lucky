@@ -80,6 +80,7 @@
 			$v  = $_GET['v']; //先走会员人数
 			$y2s = $_GET['y2s'];
 			$y4s = $_GET['y4s'];
+			$vipcard = $_GET['vipcard'];
 
 			$m   = D('Account');
 			$arr = $m->where('id='.$id)->find();
@@ -90,6 +91,7 @@
 			$carr['vnumber'] = $v;
 			$carr['y2s']     = $y2s;
 			$carr['y4s']     = $y4s;
+			$carr['vipcard'] = $vipcard;
 			if($arr['tnumber'] == "888") {
 				$total = "包房部分人提前走不用结账";
 			}else{

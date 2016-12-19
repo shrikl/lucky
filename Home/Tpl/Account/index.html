@@ -292,14 +292,14 @@
 						<input type="number" class="form-control" id="advanceSettleAccountVnumber" name="advanceSettleAccountVnumber" value="0" onkeyup="getASA()" disabled="disabled">
 						<span class="input-group-addon">人</span>
 					</div>
-					<!-- <div class="input-group form-group">
+					<div class="input-group form-group">
 						<span class="input-group-addon">&nbsp;&nbsp;次&nbsp;&nbsp;&nbsp;卡&nbsp;</span>
-						<span class="input-group-btn"><button type="button" class="btn btn-warning" onclick="plusvipcard()"><span class="glyphicon glyphicon-plus"></span></button></span>
+						<span class="input-group-btn"><button type="button" class="btn btn-warning" onclick="plusavipcard()"><span class="glyphicon glyphicon-plus"></span></button></span>
 						<input type="number" class="form-control" id="advanceSettleAccountVipcard" value="0" disabled>
-						<input type="hidden" id="advanceSettleAccountMaxvipcard" value="">
-						<span class="input-group-btn"><button type="button" class="btn btn-warning" onclick="subvipcard()"><span class="glyphicon glyphicon-minus"></span></button></span>
+						<input type="hidden" id="advanceSettleAccountMaxvipcard" value="0">
+						<span class="input-group-btn"><button type="button" class="btn btn-warning" onclick="subavipcard()"><span class="glyphicon glyphicon-minus"></span></button></span>
 						<span class="input-group-addon">张</span>
-					</div> -->
+					</div>
 					<div class="input-group form-group">
 						<span class="input-group-addon">矿&nbsp;泉&nbsp;水</span>
 						<span class="input-group-btn"><button type="button" class="btn btn-warning" onclick="plusay2s()"><span class="glyphicon glyphicon-plus"></span></button></span>
@@ -386,6 +386,7 @@
 		document.getElementById("advanceSettleAccountTime").innerHTML   = "";
 		document.getElementById("advanceSettleAccount4y").value         = 0;
 		document.getElementById("advanceSettleAccount2y").value         = 0;
+		document.getElementById("advanceSettleAccountVipcard").value    = 0;
 	}
 	/*********************************************************************************/
 	/**************************ajax获取结账金额和时间*****************************/
@@ -410,6 +411,8 @@
 		var v = document.getElementById("advanceSettleAccountVnumber").value;
 		var y2s = document.getElementById("advanceSettleAccount2y").value;
 		var y4s = document.getElementById("advanceSettleAccount4y").value;
+		var vipcard = document.getElementById("advanceSettleAccountVipcard").value;
+		document.getElementById("advanceSettleAccountMaxvipcard").value = v;
 		var maxp, maxv;
 		if(p == "" || p == 0) {
 			document.getElementById("advanceSettleAccountVnumber").disabled = "disabled";
@@ -418,13 +421,14 @@
 			document.getElementById("advanceSettleAccountVnumber").removeAttribute("disabled");
 		}
 		var id = document.getElementById("advanceSettleAccountId").value;
-		// alert(v);
+		// alert(vipcard);
 		$.get('__URL__/getAdvanceSettleAccount', {
 			"id": id,
 			"p": p,
 			"v": v,
 			"y2s": y2s,
 			"y4s": y4s,
+			"vipcard": vipcard,
 		}, function(jdata) {
 			maxp = jdata['pnumber'];
 			maxv = jdata['vnumber'];
@@ -437,11 +441,13 @@
 					alert("会员人数需小于总会员人数！");
 					document.getElementById("advanceSettleAccountVnumber").value  = 0;
 					emptyAll();
+					getASA();
 				}else{
 					if(parseInt(v) > parseInt(p)) {
 						alert("会员人数需小于先走人数！");
 						document.getElementById("advanceSettleAccountVnumber").value  = 0;
 						emptyAll();
+						getASA();
 					}else{
 						document.getElementById("advanceSettleAccountTotal").value    = jdata['total'];
 						document.getElementById("advanceSettleAccountYs").value       = jdata['total'];
@@ -459,10 +465,12 @@
 		checkASA();
 	}
 	function emptyAll() {
-		document.getElementById("advanceSettleAccountTotal").value    = "";
-		document.getElementById("advanceSettleAccountYs").value       = "";
-		document.getElementById("advanceSettleAccountEtime").value    = "";
-		document.getElementById("advanceSettleAccountTime").innerHTML = "";
+		document.getElementById("advanceSettleAccountTotal").value      = "";
+		document.getElementById("advanceSettleAccountYs").value         = "";
+		document.getElementById("advanceSettleAccountEtime").value      = "";
+		document.getElementById("advanceSettleAccountTime").innerHTML   = "";
+		document.getElementById("advanceSettleAccountVipcard").value    = 0;
+		document.getElementById("advanceSettleAccountMaxvipcard").value = 0;
 	}
 	/*********************************************************************************/
 	/********************检查新增订单的表单输入域是否有为空项*************************/
@@ -630,7 +638,7 @@
 		getASA();
 	}
 	/*********************************************************************************/
-	/*****************************提前结账次卡结算************************************/
+	/*********************************结账次卡结算************************************/
 	function plusvipcard() {
 		var vipcard = document.getElementById("settleAccountVipcard").value;
 		var id = document.getElementById("settleAccountId").value;
@@ -656,10 +664,31 @@
 		var id = document.getElementById("settleAccountId").value;
 		getSA(id);
 	}
-	function getMaxvipcard(id) {
-		var maxvipcard = 1;
-		
-		return maxvipcard;
+	/*********************************************************************************/
+	/*****************************提前结账次卡结算************************************/
+	function plusavipcard() {
+		var vipcard = document.getElementById("advanceSettleAccountVipcard").value;
+		var maxvipcard = document.getElementById("advanceSettleAccountMaxvipcard").value;
+		vipcard = parseInt(vipcard);
+		var temp = vipcard + 1;
+		if(temp > maxvipcard) {
+			document.getElementById("advanceSettleAccountVipcard").value = maxvipcard;
+		}else{
+			vipcard += 1;
+			document.getElementById("advanceSettleAccountVipcard").value = vipcard;
+		}
+		getASA();
+	}
+	function subavipcard() {
+		var vipcard = document.getElementById("advanceSettleAccountVipcard").value;
+		vipcard = parseInt(vipcard);
+		vipcard -= 1;
+		if(vipcard < 0) {
+			document.getElementById("advanceSettleAccountVipcard").value = 0;
+		}else{
+			document.getElementById("advanceSettleAccountVipcard").value = vipcard;
+		}
+		getASA();
 	}
 	/*********************************************************************************/
 </script>
