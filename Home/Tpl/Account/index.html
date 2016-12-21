@@ -474,7 +474,7 @@
 				document.getElementById("advanceSettleAccountTotal").value    = jdata['total'];
 				document.getElementById("advanceSettleAccountYs").value       = jdata['total'];
 				document.getElementById("advanceSettleAccountEtime").value    = jdata['etime'];
-				document.getElementById("advanceSettleAccountTime").innerHTML = jdata['sc'];
+				document.getElementById("advanceSettleAccountTime").value     = jdata['sc'];
 			}
 		});
 		checkASA();
@@ -483,7 +483,7 @@
 		document.getElementById("advanceSettleAccountTotal").value      = "";
 		document.getElementById("advanceSettleAccountYs").value         = "";
 		document.getElementById("advanceSettleAccountEtime").value      = "";
-		document.getElementById("advanceSettleAccountTime").innerHTML   = "";
+		document.getElementById("advanceSettleAccountTime").value       = "";
 		document.getElementById("advanceSettleAccountVipcard").value    = 0;
 		document.getElementById("advanceSettleAccountMaxvipcard").value = 0;
 	}
