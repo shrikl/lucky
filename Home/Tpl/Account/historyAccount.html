@@ -79,7 +79,7 @@
 							<td>
 								<span class="label label-warning">桌子号码</span>
 							</td>
-							<td>
+							<!-- <td>
 								<span class="label label-warning">应收金额</span>
 							</td>
 							<td>
@@ -87,7 +87,7 @@
 							</td>
 							<td>
 								<span class="label label-warning">付款方式</span>
-							</td>
+							</td> -->
 						</tr>
 						<tr class="info">
 							<td>
@@ -108,6 +108,42 @@
 									<else />
 										<{$a.tnumber}>号桌
 								</if>
+							</td>
+							<!-- <td>
+								<{$a.total}>
+							</td>
+							<td>
+								<{$a.actual}>
+							</td>
+							<td>
+								<eq name='a.payment' value='1'>现金</eq>
+								<eq name='a.payment' value='2'>微信</eq>
+								<eq name='a.payment' value='3'>支付宝</eq>
+							</td> -->
+						</tr>
+						<tr>
+							<td>
+								<span class="label label-warning">矿泉水</span>
+							</td>
+							<td>
+								<span class="label label-warning">4元饮料</span>
+							</td>
+							<td>
+								<span class="label label-warning">应收金额</span>
+							</td>
+							<td>
+								<span class="label label-warning">实收金额</span>
+							</td>
+							<td>
+								<span class="label label-warning">付款方式</span>
+							</td>
+						</tr>
+						<tr class="info">
+							<td>
+								<{$a.y2s}>支
+							</td>
+							<td>
+								<{$a.y4s}>支
 							</td>
 							<td>
 								<{$a.total}>
