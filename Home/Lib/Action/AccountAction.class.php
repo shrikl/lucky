@@ -117,12 +117,14 @@
 			$actual  = $_POST['settleAccountActual'];
 			$id      = $_POST['settleAccountId'];
 			$payment = $_POST['settleAccountPayment'];
+			$remark  = $_POST['settleAccountRemark'];
 
 			$m = D('Account');
 
 			$data['actual']  = $actual;
 			$data['payment'] = $payment;
 			$data['cid']     = $_SESSION['username'];
+			$data['remark']  = $remark;
 
 			$c = $m->where('id='.$id)->save($data);
 
@@ -223,6 +225,7 @@
 			$payment = $_POST['advanceSettleAccountPayment'];
 			$y2s     = $_POST['advanceSettleAccount2y'];
 			$y4s     = $_POST['advanceSettleAccount4y'];
+			$remark  = $_POST['advanceSettleAccountRemark'];
 
 			$m = D('Account');
 			$arr = $m->where('id='.$id)->find();
@@ -241,6 +244,7 @@
 			$data['total']   = $ays;
 			$data['actual']  = $ass;
 			$data['payment'] = $payment;
+			$data['remark']  = $remark;
 
 			$dataa['pnumber'] = $arr['pnumber'] - (int)$xzrs;
 			$dataa['vnumber'] = $arr['vnumber'] - (int)$xzvn;
