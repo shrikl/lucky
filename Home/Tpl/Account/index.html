@@ -252,7 +252,7 @@
 					</div>
 					<div class="form-group input-group">
 						<span class="input-group-addon">备注</span>
-						<input type="text" class="form-control" name="settleAccountRemark" value="">
+						<input type="text" class="form-control" id="settleAccountRemark" name="settleAccountRemark" value="">
 					</div>
 					<div class="form-group btn-group" data-toggle="buttons" style="width: 100%">
 						<label class="btn btn-primary active" style="width: 33%">
@@ -385,6 +385,7 @@
 			"id": id,
 		}, function(jdata) {
 			document.getElementById("settleAccountMaxvipcard").value = jdata['vnumber'];
+			document.getElementById("settleAccountRemark").value = jdata['remark'];
 			// alert(document.getElementById("settleAccountMaxvipcard").value);
 		});
 		getSA(id);

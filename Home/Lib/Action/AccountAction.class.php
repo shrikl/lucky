@@ -320,7 +320,7 @@
 		public function getVnumber() {
 			$id = $_GET['id'];
 			$m = D('Account');
-			$arr = $m->field('vnumber')->where('id='.$id)->find();
+			$arr = $m->where('id='.$id)->find();
 			$this->ajaxReturn($arr);
 		}
 		public function test() {
