@@ -297,7 +297,7 @@
 					</div>
 					<div class="form-group input-group">
 						<span class="input-group-addon">会员</span>
-						<input type="number" class="form-control" id="advanceSettleAccountVnumber" name="advanceSettleAccountVnumber" value="0" onkeyup="getASA()" disabled="disabled">
+						<input type="number" class="form-control" id="advanceSettleAccountVnumber" name="advanceSettleAccountVnumber" value="0" min="0" onkeyup="getASA()" disabled="disabled">
 						<span class="input-group-addon">人</span>
 					</div>
 					<div class="input-group form-group">
@@ -428,7 +428,7 @@
 		var y4s = document.getElementById("advanceSettleAccount4y").value;
 		var vipcard = document.getElementById("advanceSettleAccountVipcard").value;
 		document.getElementById("advanceSettleAccountMaxvipcard").value = v;
-		var maxp, maxv;
+		var maxp, maxv, minv;
 		if(p == "" || p == 0) {
 			document.getElementById("advanceSettleAccountVnumber").disabled = "disabled";
 			document.getElementById("advanceSettleAccountVnumber").value    = 0;
@@ -447,6 +447,7 @@
 		}, function(jdata) {
 			maxp = jdata['pnumber'];
 			maxv = jdata['vnumber'];
+			// parseInt(maxp) - parseInt(p) < parseInt(maxv)
 			if(parseInt(p) >= parseInt(maxp)) {
 				alert("先走人数需小于总人数！");
 				document.getElementById("advanceSettleAccountPnumber").value  = "";
@@ -471,6 +472,12 @@
 					}
 				}
 			}else{
+				if(parseInt(maxp) - parseInt(p) < parseInt(maxv)) {
+					minv = parseInt(maxv) - parseInt(maxp) + parseInt(p);
+					document.getElementById("advanceSettleAccountVnumber").min = minv;
+				}else{
+					document.getElementById("advanceSettleAccountVnumber").min = 0;
+				}
 				document.getElementById("advanceSettleAccountTotal").value    = jdata['total'];
 				document.getElementById("advanceSettleAccountYs").value       = jdata['total'];
 				document.getElementById("advanceSettleAccountEtime").value    = jdata['etime'];
