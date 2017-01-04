@@ -515,7 +515,12 @@
 		var idpnumber = id + "pnumber";
 		var pnumber = document.getElementById(idpnumber).value;
 		if(b == pnumber) {
-			document.getElementById("SASubBtn").removeAttribute("disabled");
+			// document.getElementById("SASubBtn").removeAttribute("disabled");
+			if(a == "") {
+				document.getElementById("SASubBtn").disabled = "disabled";
+			}else{
+				document.getElementById("SASubBtn").removeAttribute("disabled");
+			}
 		}else{
 			if(a == "" || a == 0) {
 				document.getElementById("SASubBtn").disabled = "disabled";
@@ -533,7 +538,12 @@
 		var b = document.getElementById("advanceSettleAccountVipcard").value; // 次卡数量
 		var y = document.getElementById("advanceSettleAccountYs").value;
 		if(b == p) {
-			document.getElementById("ASASubBtn").removeAttribute("disabled");
+			// document.getElementById("ASASubBtn").removeAttribute("disabled");
+			if(a == "" || p == "" || p == 0 || v == "" || y == "" || isNaN(y)) {
+				document.getElementById("ASASubBtn").disabled = "disabled";
+			}else{
+				document.getElementById("ASASubBtn").removeAttribute("disabled");
+			}
 		}else{
 			if(a == "" || a == 0 || p == "" || p == 0 || v == "" || y == "" || isNaN(y)) {
 				document.getElementById("ASASubBtn").disabled = "disabled";
