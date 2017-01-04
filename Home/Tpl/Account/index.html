@@ -383,6 +383,7 @@
 		document.getElementById("settleAccountActual").value = "";
 		document.getElementById("settleAccountId").value     = id;
 		document.getElementById("settleAccountVipcard").value = 0;
+		document.getElementById("SASubBtn").disabled          = "disabled";
 		var idvnumber = id + "vnumber";
 		document.getElementById("settleAccountMaxvipcard").value = document.getElementById(idvnumber).value;
 		var idremark = id + "remark";
@@ -402,6 +403,7 @@
 		document.getElementById("advanceSettleAccount4y").value         = 0;
 		document.getElementById("advanceSettleAccount2y").value         = 0;
 		document.getElementById("advanceSettleAccountVipcard").value    = 0;
+		document.getElementById("ASASubBtn").disabled                   = "disabled";
 	}
 	/*********************************************************************************/
 	/**************************ajax获取结账金额和时间*****************************/
