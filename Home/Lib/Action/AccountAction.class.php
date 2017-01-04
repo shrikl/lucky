@@ -113,7 +113,7 @@
 			if(!$this->isPost()) {
 				$this->redirect("Account/index");
 			}
-
+			
 			$actual  = $_POST['settleAccountActual'];
 			$id      = $_POST['settleAccountId'];
 			$payment = $_POST['settleAccountPayment'];
@@ -143,11 +143,13 @@
 			if($ntime >= $s) {
 				$e = $s + 86400;
 				$data['stime']  = array(array('gt', $s), array('lt', $e));
-				$data['actual'] = array(array('gt', 0));
+				// $data['actual'] = array(array('gt', 0));
+				$data['cid'] = array(array('neq', ""));
 			}else if($ntime < $s) {
 				$e = $s - 86400;
 				$data['stime']  = array(array('gt', $e), array('lt', $s));
-				$data['actual'] = array(array('gt', 0));
+				// $data['actual'] = array(array('gt', 0));
+				$data['cid'] = array(array('neq', ""));
 			}
 
 			$arr     = $m->relation(true)->where($data)->select();
@@ -267,7 +269,8 @@
 			$etime = strtotime($edate." 24:00:00");
 
 			$data['stime']  = array(array('gt', $stime), array('lt', $etime));
-			$data['actual'] = array(array('gt', 0));
+			// $data['actual'] = array(array('gt', 0));
+			$data['cid'] = array(array('neq', ""));
 
 			$m = D('Account');
 			$arr = $m->relation(true)->where($data)->select();
