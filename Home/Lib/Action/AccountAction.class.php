@@ -8,11 +8,13 @@
 			if($ntime >= $s) {
 				$e = $s + 86400;
 				$data['stime']  = array(array('gt', $s), array('lt', $e));
-				$data['actual'] = array(array('elt', 0));
+				// $data['actual'] = array(array('elt', 0));
+				$data['cid'] = array('eq', "未结账");
 			}else if($ntime < $s) {
 				$e = $s - 86400;
 				$data['stime']  = array(array('gt', $e), array('lt', $s));
-				$data['actual'] = array(array('elt', 0));
+				// $data['actual'] = array(array('elt', 0));
+				$data['cid'] = array('eq', "未结账");
 			}
 			
 			$m   = D("Account");
@@ -113,7 +115,7 @@
 			if(!$this->isPost()) {
 				$this->redirect("Account/index");
 			}
-			
+
 			$actual  = $_POST['settleAccountActual'];
 			$id      = $_POST['settleAccountId'];
 			$payment = $_POST['settleAccountPayment'];
@@ -144,12 +146,12 @@
 				$e = $s + 86400;
 				$data['stime']  = array(array('gt', $s), array('lt', $e));
 				// $data['actual'] = array(array('gt', 0));
-				$data['cid'] = array(array('neq', ""));
+				$data['cid'] = array(array('neq', "未结账"));
 			}else if($ntime < $s) {
 				$e = $s - 86400;
 				$data['stime']  = array(array('gt', $e), array('lt', $s));
 				// $data['actual'] = array(array('gt', 0));
-				$data['cid'] = array(array('neq', ""));
+				$data['cid'] = array(array('neq', "未结账"));
 			}
 
 			$arr     = $m->relation(true)->where($data)->select();
@@ -270,7 +272,7 @@
 
 			$data['stime']  = array(array('gt', $stime), array('lt', $etime));
 			// $data['actual'] = array(array('gt', 0));
-			$data['cid'] = array(array('neq', ""));
+			$data['cid'] = array(array('neq', "未结账"));
 
 			$m = D('Account');
 			$arr = $m->relation(true)->where($data)->select();
