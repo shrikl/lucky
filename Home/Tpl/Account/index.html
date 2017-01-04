@@ -576,8 +576,8 @@
 			y2 = 0;
 		}else{
 			document.getElementById("2y"+id).value = y2;
+			modifywater(id, 2, y2);
 		}
-		modifywater(id, 2, y2);
 	}
 	function plusy4s(id) {
 		var y4 = document.getElementById("4y"+id).value;
@@ -595,8 +595,8 @@
 			y4 = 0;
 		}else{
 			document.getElementById("4y"+id).value = y4;
+			modifywater(id, 4, y4);
 		}
-		modifywater(id, 4, y4);
 	}
 	function modifywater(id, y, n) {
 		$.get('__URL__/modifyWater', {
