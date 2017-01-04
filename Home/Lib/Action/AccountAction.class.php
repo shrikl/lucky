@@ -3,14 +3,14 @@
 		/* ---------------------------------↓↓↓↓↓↓------------------------------------ */
 		public function index() {
 			$d = date('Y-m-d')." 12:00:00";
-			$s = strtotime($d);
-			$ntime = time();
-			if($ntime >= $s) {
+			$s = strtotime($d); // 当日中午12点时间戳
+			$ntime = time();    // 当前时间戳
+			if($ntime >= $s) {  // 下午
 				$e = $s + 86400;
 				$data['stime']  = array(array('gt', $s), array('lt', $e));
 				// $data['actual'] = array(array('elt', 0));
 				$data['cid'] = array('eq', "未结账");
-			}else if($ntime < $s) {
+			}else if($ntime < $s) { // 凌晨
 				$e = $s - 86400;
 				$data['stime']  = array(array('gt', $e), array('lt', $s));
 				// $data['actual'] = array(array('elt', 0));
