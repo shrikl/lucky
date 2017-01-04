@@ -142,6 +142,7 @@
 							<tr>
 								<td align="left">
 									<span class="label label-warning">客官人数</span>&nbsp;&nbsp;<{$a.pnumber}>
+									<input type="hidden" id="<{$a.id}>pnumber" value="<{$a.pnumber}>">
 								</td>
 								<td align="right" width="50%">
 									<div class="input-group">
@@ -509,10 +510,18 @@
 	/************************检查结账订单的表单输入域是否有为空项*********************/
 	function checkSA() {
 		var a = document.getElementById("settleAccountActual").value;
-		if(a == "" || a == 0) {
-			document.getElementById("SASubBtn").disabled = "disabled";
-		}else{
+		var b = document.getElementById("settleAccountVipcard").value; // 次卡数量
+		var id = document.getElementById("settleAccountId").value;
+		var idpnumber = id + "pnumber";
+		var pnumber = document.getElementById(idpnumber).value;
+		if(b == pnumber) {
 			document.getElementById("SASubBtn").removeAttribute("disabled");
+		}else{
+			if(a == "" || a == 0) {
+				document.getElementById("SASubBtn").disabled = "disabled";
+			}else{
+				document.getElementById("SASubBtn").removeAttribute("disabled");
+			}
 		}
 	}
 	/*********************************************************************************/
@@ -521,11 +530,16 @@
 		var p = document.getElementById("advanceSettleAccountPnumber").value;
 		var v = document.getElementById("advanceSettleAccountVnumber").value;
 		var a = document.getElementById("advanceSettleAccountActual").value;
+		var b = document.getElementById("advanceSettleAccountVipcard").value; // 次卡数量
 		var y = document.getElementById("advanceSettleAccountYs").value;
-		if(a == "" || a == 0 || p == "" || p == 0 || v == "" || y == "" || isNaN(y)) {
-			document.getElementById("ASASubBtn").disabled = "disabled";
-		}else{
+		if(b == p) {
 			document.getElementById("ASASubBtn").removeAttribute("disabled");
+		}else{
+			if(a == "" || a == 0 || p == "" || p == 0 || v == "" || y == "" || isNaN(y)) {
+				document.getElementById("ASASubBtn").disabled = "disabled";
+			}else{
+				document.getElementById("ASASubBtn").removeAttribute("disabled");
+			}
 		}
 	}
 	/*********************************************************************************/
